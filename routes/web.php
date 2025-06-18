@@ -1,8 +1,9 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CarController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WeatherController;
 
 // Landing Page
 Route::get('/', function () {
@@ -35,4 +36,14 @@ Route::prefix('cars')->group(function () {
         Route::put('{id}', [CarController::class, 'update']);
         Route::delete('{id}', [CarController::class, 'destroy']);
     });
+});
+
+// Weather API
+Route::get('/weather', [WeatherController::class, 'index']);
+Route::get('/weather/{id}', [WeatherController::class, 'show']);
+
+Route::middleware('apikey')->group(function () {
+    Route::post('/weather', [WeatherController::class, 'store']);
+    Route::put('/weather/{id}', [WeatherController::class, 'update']);
+    Route::delete('/weather/{id}', [WeatherController::class, 'destroy']);
 });
