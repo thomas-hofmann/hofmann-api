@@ -43,23 +43,30 @@
                     <!-- 📦 Custom Data (für eigene Inhalte wie Spiele, Apps etc.) -->
                     <div>
                         <h2 class="text-xl font-semibold text-[#1a1a1a] dark:text-white">📦 Custom Data</h2>
-                        <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
-                            <li><strong>GET</strong> /data — Alle Einträge des aktuellen Clients abrufen 
-                                <em>(API-Key erforderlich; es werden nur eigene Daten angezeigt)</em></li>
-                            <li><strong>GET</strong> /data/{id} — Einzelnen Eintrag anzeigen 
-                                <em>(nur, wenn er zum API-Key/Client gehört)</em></li>
-                            <li><strong>POST</strong> /data — Neuen Eintrag speichern  
-                                <br><span class="ml-6 text-xs text-[#888] dark:text-[#aaa]">Body: <code>{ "data": { ... } }</code></span>
-                                <br><span class="ml-6 text-xs text-[#888] dark:text-[#aaa]">Header: <code>X-API-KEY</code></span>
-                            </li>
-                            <li><strong>PUT</strong> /data/{id} — Bestehenden Eintrag aktualisieren 
-                                <em>(nur möglich, wenn er dem API-Key/Client gehört)</em></li>
-                            <li><strong>DELETE</strong> /data/{id} — Eintrag löschen 
-                                <em>(nur möglich, wenn er dem API-Key/Client gehört)</em></li>
-                        </ul>
-                        <p class="mt-2 text-xs text-[#888] dark:text-[#aaa]">
-                            🔒 Alle Daten sind mandantengetrennt – Clients (z. B. deine App oder dein Projekt) können nur ihre eigenen Inhalte sehen und verwalten.
+                        <p class="text-sm text-[#5c5c5c] dark:text-[#bbb] mt-1">
+                            Universeller Datenspeicher für beliebige Zwecke (z. B. Coins, Spielstände, Einstellungen, etc.).
+                            <br><strong>Hinweis:</strong> Alle Daten sind mandantengetrennt (API-Key bestimmt den Client) und werden nur für den jeweiligen Client angezeigt.
                         </p>
+                        <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
+                            <li><strong>GET</strong> /data — Alle eigenen Einträge abrufen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /data/{id} — Einzelnen Eintrag per ID anzeigen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /data/category/{category} — Alle Einträge nach Kategorie filtern <em>(API-Key erforderlich)</em></li>
+                            <li><strong>POST</strong> /data — Neuen Eintrag speichern <em>(API-Key + Kategorie erforderlich)</em></li>
+                            <li><strong>PUT</strong> /data/{id} — Eintrag aktualisieren <em>(API-Key erforderlich)</em></li>
+                            <li><strong>DELETE</strong> /data/{id} — Eintrag löschen <em>(API-Key erforderlich)</em></li>
+                        </ul>
+                        <p class="text-xs mt-2 text-[#777] dark:text-[#999]">
+                            Der POST-Body muss ein JSON-Objekt enthalten mit mindestens einem <code>category</code>-Feld sowie einem <code>data</code>-Objekt:
+                        </p>
+                        <pre class="bg-[#f4f4f4] dark:bg-[#222] p-2 rounded text-xs text-[#333] dark:text-[#ccc] mt-1 overflow-x-auto">
+{
+  "category": "coins",
+  "data": {
+    "gold": 100,
+    "silver": 250
+  }
+}
+</pre>
                     </div>
 
                     <!-- 📚 Bücher -->
@@ -100,13 +107,13 @@
 
                 </section>
                 <footer class="mt-10 w-full border-t border-[#e5e5e5] dark:border-[#2a2a2a] pt-2 text-sm text-[#666] dark:text-[#aaa]">
-                <p>&copy; <span id="year"></span> Thomas Hofmann</p>
-            </footer>
+                    <p>&copy; <span id="year"></span> Thomas Hofmann</p>
+                </footer>
 
-            <script>
-                // Setzt automatisch die aktuelle Jahreszahl
-                document.getElementById('year').textContent = new Date().getFullYear();
-            </script>
+                <script>
+                    // Setzt automatisch die aktuelle Jahreszahl
+                    document.getElementById('year').textContent = new Date().getFullYear();
+                </script>
             </div>
         </main>
 

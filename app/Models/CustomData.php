@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomData extends Model
 {
-    protected $fillable = ['client', 'type', 'data'];
+    protected $fillable = ['client', 'category', 'data'];
 
     protected $casts = [
         'data' => 'array',

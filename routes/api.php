@@ -55,5 +55,7 @@ Route::prefix('data')->group(function () {
         Route::post('/', [CustomDataController::class, 'store']);
         Route::put('{id}', [CustomDataController::class, 'update']);
         Route::delete('{id}', [CustomDataController::class, 'destroy']);
+
+        Route::get('/category/{category}', [CustomDataController::class, 'getByCategory']);
     });
 });
