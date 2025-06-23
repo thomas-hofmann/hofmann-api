@@ -40,6 +40,27 @@
                             <code class="font-mono text-sm px-1 py-0.5 rounded bg-[#f6f6f6] dark:bg-[#1f1f1f] text-[#333] dark:text-[#ccc]">weather</code>).
                         </p>
                     </div>
+                    <!-- 📦 Custom Data (für eigene Inhalte wie Spiele, Apps etc.) -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-[#1a1a1a] dark:text-white">📦 Custom Data</h2>
+                        <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
+                            <li><strong>GET</strong> /data — Alle Einträge des aktuellen Clients abrufen 
+                                <em>(API-Key erforderlich; es werden nur eigene Daten angezeigt)</em></li>
+                            <li><strong>GET</strong> /data/{id} — Einzelnen Eintrag anzeigen 
+                                <em>(nur, wenn er zum API-Key/Client gehört)</em></li>
+                            <li><strong>POST</strong> /data — Neuen Eintrag speichern  
+                                <br><span class="ml-6 text-xs text-[#888] dark:text-[#aaa]">Body: <code>{ "data": { ... } }</code></span>
+                                <br><span class="ml-6 text-xs text-[#888] dark:text-[#aaa]">Header: <code>X-API-KEY</code></span>
+                            </li>
+                            <li><strong>PUT</strong> /data/{id} — Bestehenden Eintrag aktualisieren 
+                                <em>(nur möglich, wenn er dem API-Key/Client gehört)</em></li>
+                            <li><strong>DELETE</strong> /data/{id} — Eintrag löschen 
+                                <em>(nur möglich, wenn er dem API-Key/Client gehört)</em></li>
+                        </ul>
+                        <p class="mt-2 text-xs text-[#888] dark:text-[#aaa]">
+                            🔒 Alle Daten sind mandantengetrennt – Clients (z. B. deine App oder dein Projekt) können nur ihre eigenen Inhalte sehen und verwalten.
+                        </p>
+                    </div>
 
                     <!-- 📚 Bücher -->
                     <div>
