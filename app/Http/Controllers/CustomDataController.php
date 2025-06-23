@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CustomData;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CustomDataController extends Controller
 {
@@ -43,9 +44,13 @@ class CustomDataController extends Controller
     {
         $client = $request->api_client;
 
-        $entry = CustomData::where('id', $id)
-            ->where('client', $client)
-            ->firstOrFail();
+        try {
+            $entry = CustomData::where('id', $id)
+                ->where('client', $client)
+                ->firstOrFail();
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Entry not found'], 404);
+        }
 
         return response()->json($entry);
     }
@@ -55,9 +60,13 @@ class CustomDataController extends Controller
         $client = $request->api_client;
         $payload = $request->input('data') ?? $request->json()->all();
 
-        $entry = CustomData::where('id', $id)
-            ->where('client', $client)
-            ->firstOrFail();
+        try {
+            $entry = CustomData::where('id', $id)
+                ->where('client', $client)
+                ->firstOrFail();
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Entry not found'], 404);
+        }
 
         $entry->update([
             'data' => $payload,
@@ -70,9 +79,13 @@ class CustomDataController extends Controller
     {
         $client = $request->api_client;
 
-        $entry = CustomData::where('id', $id)
-            ->where('client', $client)
-            ->firstOrFail();
+        try {
+            $entry = CustomData::where('id', $id)
+                ->where('client', $client)
+                ->firstOrFail();
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Entry not found'], 404);
+        }
 
         $entry->delete();
 

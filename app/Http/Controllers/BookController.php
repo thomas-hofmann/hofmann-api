@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BookController extends Controller
 {
@@ -16,13 +17,20 @@ class BookController extends Controller
     // Einzelnes Buch anzeigen
     public function show($id)
     {
-        $book = Book::findOrFail($id);
+        try {
+            $book = Book::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Book not found'], 404);
+        }
+
         return response()->json($book);
     }
 
     // Neues Buch speichern
     public function store(Request $request)
     {
+        // Optional: Validierung hier ergänzen
+
         $book = Book::create($request->all());
         return response()->json($book, 201);
     }
@@ -30,7 +38,12 @@ class BookController extends Controller
     // Buch updaten
     public function update(Request $request, $id)
     {
-        $book = Book::findOrFail($id);
+        try {
+            $book = Book::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Book not found'], 404);
+        }
+
         $book->update($request->all());
         return response()->json($book);
     }
@@ -38,7 +51,12 @@ class BookController extends Controller
     // Buch löschen
     public function destroy($id)
     {
-        $book = Book::findOrFail($id);
+        try {
+            $book = Book::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Book not found'], 404);
+        }
+
         $book->delete();
         return response()->json(null, 204);
     }
