@@ -25,7 +25,7 @@
 
                 <section class="space-y-10">
 
-                    <!-- 🔑 Auth -->
+                    <!-- 🔑 Auth here -->
                     <div>
                         <h2 class="text-xl font-semibold text-[#1a1a1a] dark:text-white">🔑 API-Key Authentifizierung</h2>
                         <p class="mt-2 text-[#5c5c5c] dark:text-[#bbb] leading-loose text-base">
