@@ -48,12 +48,12 @@
                             <br><strong>Hinweis:</strong> Alle Daten sind mandantengetrennt (API-Key bestimmt den Client) und werden nur für den jeweiligen Client angezeigt.
                         </p>
                         <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
-                            <li><strong>GET</strong> /data — Alle eigenen Einträge abrufen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>GET</strong> /data/{id} — Einzelnen Eintrag per ID anzeigen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>GET</strong> /data/category/{category} — Alle Einträge nach Kategorie filtern <em>(API-Key erforderlich)</em></li>
-                            <li><strong>POST</strong> /data — Neuen Eintrag speichern <em>(API-Key + Kategorie erforderlich)</em></li>
-                            <li><strong>PUT</strong> /data/{id} — Eintrag aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /data/{id} — Eintrag löschen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /api/data — Alle eigenen Einträge abrufen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /api/data/{id} — Einzelnen Eintrag per ID anzeigen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /api/data/category/{category} — Alle Einträge nach Kategorie filtern <em>(API-Key erforderlich)</em></li>
+                            <li><strong>POST</strong> /api/data — Neuen Eintrag speichern <em>(API-Key + Kategorie erforderlich)</em></li>
+                            <li><strong>PUT</strong> /api/data/{id} — Eintrag aktualisieren <em>(API-Key erforderlich)</em></li>
+                            <li><strong>DELETE</strong> /api/data/{id} — Eintrag löschen <em>(API-Key erforderlich)</em></li>
                         </ul>
                         <p class="text-xs mt-2 text-[#777] dark:text-[#999]">
                             Der POST-Body muss ein JSON-Objekt enthalten mit mindestens einem <code>category</code>-Feld sowie einem <code>data</code>-Objekt:
@@ -73,11 +73,11 @@
                     <div>
                         <h2 class="text-xl font-semibold text-[#1a1a1a] dark:text-white">📚 Bücher</h2>
                         <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
-                            <li><strong>GET</strong> /books — Liste aller Bücher abrufen</li>
-                            <li><strong>GET</strong> /books/{id} — Details eines Buches anzeigen</li>
-                            <li><strong>POST</strong> /books — Neues Buch anlegen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>PUT</strong> /books/{id} — Buch aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /books/{id} — Buch löschen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /api/books — Liste aller Bücher abrufen</li>
+                            <li><strong>GET</strong> /api/books/{id} — Details eines Buches anzeigen</li>
+                            <li><strong>POST</strong> /api/books — Neues Buch anlegen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>PUT</strong> /api/books/{id} — Buch aktualisieren <em>(API-Key erforderlich)</em></li>
+                            <li><strong>DELETE</strong> /api/books/{id} — Buch löschen <em>(API-Key erforderlich)</em></li>
                         </ul>
                     </div>
 
@@ -85,11 +85,11 @@
                     <div>
                         <h2 class="text-xl font-semibold text-[#1a1a1a] dark:text-white">🚗 Autos</h2>
                         <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
-                            <li><strong>GET</strong> /cars — Liste aller Autos abrufen</li>
-                            <li><strong>GET</strong> /cars/{id} — Details eines Autos anzeigen</li>
-                            <li><strong>POST</strong> /cars — Neues Auto anlegen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>PUT</strong> /cars/{id} — Auto aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /cars/{id} — Auto löschen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /api/cars — Liste aller Autos abrufen</li>
+                            <li><strong>GET</strong> /api/cars/{id} — Details eines Autos anzeigen</li>
+                            <li><strong>POST</strong> /api/cars — Neues Auto anlegen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>PUT</strong> /api/cars/{id} — Auto aktualisieren <em>(API-Key erforderlich)</em></li>
+                            <li><strong>DELETE</strong> /api/cars/{id} — Auto löschen <em>(API-Key erforderlich)</em></li>
                         </ul>
                     </div>
 
@@ -97,11 +97,11 @@
                     <div>
                         <h2 class="text-xl font-semibold text-[#1a1a1a] dark:text-white">☀️ Wetter</h2>
                         <ul class="mt-2 space-y-2 text-[#5c5c5c] dark:text-[#bbb] text-sm leading-relaxed">
-                            <li><strong>GET</strong> /weather — Alle Wetterdaten abrufen</li>
-                            <li><strong>GET</strong> /weather/{id} — Wettereintrag per ID anzeigen</li>
-                            <li><strong>POST</strong> /weather — Neuen Wettereintrag anlegen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>PUT</strong> /weather/{id} — Wetterdaten aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /weather/{id} — Wetterdaten löschen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>GET</strong> /api/weather — Alle Wetterdaten abrufen</li>
+                            <li><strong>GET</strong> /api/weather/{id} — Wettereintrag per ID anzeigen</li>
+                            <li><strong>POST</strong> /api/weather — Neuen Wettereintrag anlegen <em>(API-Key erforderlich)</em></li>
+                            <li><strong>PUT</strong> /api/weather/{id} — Wetterdaten aktualisieren <em>(API-Key erforderlich)</em></li>
+                            <li><strong>DELETE</strong> /api/weather/{id} — Wetterdaten löschen <em>(API-Key erforderlich)</em></li>
                         </ul>
                     </div>
 
