@@ -19,7 +19,7 @@
 
 <body class="bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-10 items-center lg:justify-center min-h-screen flex-col font-sans">
     <div class="flex items-center justify-center w-full max-w-7xl transition-opacity duration-700 ease-out animate-fadeIn border border-[#F53003]/50 rounded shadow-[0_0_6px_var(--tw-shadow-color)] shadow-[#F53003]">
-        <main class="w-full p-6 bg-[#161615] text-[#EDEDEC] rounded-2xl shadow-xl ring-1 ring-white/10">
+        <main class="w-full p-6 bg-[#161615] text-[#EDEDEC] rounded">
             <header class="mb-10">
                 <h1 class="text-5xl font-bold tracking-tight text-white">
                     Hofmann<span class="text-[#F53003]">API</span>
