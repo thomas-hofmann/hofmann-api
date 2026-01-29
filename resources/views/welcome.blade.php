@@ -30,15 +30,15 @@
         <div class="mx-auto w-full max-w-6xl px-6 py-10 lg:py-14">
             <main data-aos="zoom-in" class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_40px_100px_rgba(0,0,0,0.55)] lg:p-10">
                 <header class="flex flex-col gap-4 border-b border-white/10 pb-8">
-                    <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/50">
+                    <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/50" data-aos="fade-left" data-aos-delay="200">
                         <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em]">REST</span>
                         <span class="text-white/40">Private API Workspace</span>
                     </div>
                     <div>
-                        <h1 class="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        <h1 class="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl" data-aos="fade-left" data-aos-delay="400">
                             Hofmann<span class="text-[#F53003]">API</span>
                         </h1>
-                        <p class="mt-3 max-w-2xl text-base text-white/70">
+                        <p class="mt-3 max-w-2xl text-base text-white/70" data-aos="fade-left" data-aos-delay="600">
                             Eine sichere, erweiterbare REST-API für strukturierte und individuelle Daten.
                         </p>
                     </div>
