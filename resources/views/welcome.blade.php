@@ -27,8 +27,8 @@
             <div class="absolute inset-0 opacity-40 bg-[linear-gradient(120deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:18px_18px]"></div>
         </div>
 
-        <div class="mx-auto w-full max-w-6xl px-6 py-10 lg:py-14">
-            <main data-aos="zoom-in" class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_40px_100px_rgba(0,0,0,0.55)] lg:p-10">
+        <div class="mx-auto w-full max-w-6xl px-0 py-6 sm:px-6 sm:py-10 lg:py-14">
+            <main data-aos="zoom-in" class="rounded-none border border-white/10 bg-white/5 p-6 shadow-[0_40px_100px_rgba(0,0,0,0.55)] sm:rounded-3xl lg:p-10">
                 <header class="flex flex-col gap-4 border-b border-white/10 pb-8">
                     <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/50" data-aos="fade-left" data-aos-delay="200">
                         <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em]">REST</span>

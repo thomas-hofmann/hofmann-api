@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 
 window.addEventListener('load', () => {
     AOS.init({
-        duration: 900,
+        duration: 700,
         easing: 'ease-out-cubic',
         once: true,
     });
