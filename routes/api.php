@@ -19,7 +19,7 @@ Route::prefix('books')->group(function () {
     });
 });
 
-// 🚗 Cars API
+// Cars API
 Route::prefix('cars')->group(function () {
     // Öffentliche Endpunkte
     Route::get('/', [CarController::class, 'index']);
