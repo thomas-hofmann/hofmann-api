@@ -35,6 +35,11 @@ class BookSeeder extends Seeder
                 'author' => 'Franz Kafka',
                 'description' => 'Gregor Samsa wacht eines Morgens als Ungeziefer auf – eine klassische Parabel.'
             ],
+            [
+                'title' => 'Im Westen nichts Neues',
+                'author' => 'Erich Maria Remarque',
+                'description' => 'Ein eindringlicher Antikriegsroman über die Erlebnisse junger deutscher Soldaten im Ersten Weltkrieg.'
+            ],
         ];
 
         foreach ($books as $book) {
