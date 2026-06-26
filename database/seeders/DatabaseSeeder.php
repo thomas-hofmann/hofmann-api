@@ -25,6 +25,9 @@ class DatabaseSeeder extends Seeder
             CarSeeder::class,
             BookSeeder::class,
             WeatherSeeder::class,
+            MovieSeeder::class,
+            GameSeeder::class,
+            SportTeamSeeder::class,
         ]);
     }
 }

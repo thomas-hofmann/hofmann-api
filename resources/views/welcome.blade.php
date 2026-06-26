@@ -64,16 +64,16 @@
                     </div>
                 </header>
 
-                <section class="mt-8 grid gap-6 lg:grid-cols-3">
-                    <div class="rounded-2xl border border-white/10 bg-[#101014]/80 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur lg:col-span-3">
+                <section class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="rounded-2xl border border-white/10 bg-[#101014]/80 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur md:col-span-2 lg:col-span-3">
                         <h2 class="flex items-center gap-2 text-lg font-semibold text-white">
                             <span class="text-[#F53003]"><i class="fa-solid fa-key"></i></span>
                             API-Key Authentifizierung
                         </h2>
                         <p class="mt-3 text-sm leading-relaxed text-white/70">
-                            Für <em>POST</em>, <em>PUT</em> und <em>DELETE</em>-Anfragen ist ein gültiger API-Key erforderlich. Dieser kann bei Thomas Hofmann angefragt werden.
-                            Bitte sende den API-Key im Header <code>X-API-KEY</code> oder als Query-Parameter <code>?api_key=DEIN_API_KEY</code>.
-                            Die Keys unterscheiden sich je nach Ressourcentyp (z. B. <code>books</code>, <code>cars</code>, <code>weather</code>).
+                            Für <em>POST</em>, <em>PUT</em> und <em>DELETE</em>-Anfragen ist ein API-Key erforderlich.
+                            Nutzung im Header <code>X-API-KEY</code> oder als Query-Parameter <code>?api_key=DEIN_API_KEY</code>.<br>
+                            Die Keys unterscheiden sich je nach Ressourcentyp (z. B. <code>books</code>, <code>cars</code>, <code>weather</code>, <code>movies</code>, <code>games</code>, <code>sport-teams</code>).
                         </p>
                     </div>
 
@@ -82,13 +82,29 @@
                             <span class="text-[#F53003]"><i class="fa-solid fa-book"></i></span>
                             Bücher
                         </h2>
-                        <ul class="mt-4 space-y-2 text-sm text-white/70">
-                            <li><strong>GET</strong> /api/books — Liste aller Bücher abrufen</li>
-                            <li><strong>GET</strong> /api/books/{id} — Details eines Buches anzeigen</li>
-                            <li><strong>POST</strong> /api/books — Neues Buch anlegen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>PUT</strong> /api/books/{id} — Buch aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /api/books/{id} — Buch löschen <em>(API-Key erforderlich)</em></li>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/books</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Liste aller Bücher abrufen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/books/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Details eines Buches anzeigen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/books</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neues Buch anlegen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/books/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Buch aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/books/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Buch löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
                         </ul>
+                        <div class="mt-4">
+                            <a href="{{ url('/api/books') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-[#F53003]/40 bg-[#F53003]/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:border-[#F53003] hover:bg-[#F53003]/20">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GET testen
+                            </a>
+                        </div>
                     </div>
 
                     <div class="rounded-2xl border border-white/10 bg-[#0f1013]/70 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
@@ -96,13 +112,29 @@
                             <span class="text-[#F53003]"><i class="fa-solid fa-car"></i></span>
                             Autos
                         </h2>
-                        <ul class="mt-4 space-y-2 text-sm text-white/70">
-                            <li><strong>GET</strong> /api/cars — Liste aller Autos abrufen</li>
-                            <li><strong>GET</strong> /api/cars/{id} — Details eines Autos anzeigen</li>
-                            <li><strong>POST</strong> /api/cars — Neues Auto anlegen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>PUT</strong> /api/cars/{id} — Auto aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /api/cars/{id} — Auto löschen <em>(API-Key erforderlich)</em></li>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/cars</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Liste aller Autos abrufen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/cars/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Details eines Autos anzeigen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/cars</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neues Auto anlegen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/cars/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Auto aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/cars/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Auto löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
                         </ul>
+                        <div class="mt-4">
+                            <a href="{{ url('/api/cars') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-[#F53003]/40 bg-[#F53003]/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:border-[#F53003] hover:bg-[#F53003]/20">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GET testen
+                            </a>
+                        </div>
                     </div>
 
                     <div class="rounded-2xl border border-white/10 bg-[#0f1013]/70 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
@@ -110,31 +142,149 @@
                             <span class="text-[#F53003]"><i class="fa-solid fa-bolt"></i></span>
                             Wetter
                         </h2>
-                        <ul class="mt-4 space-y-2 text-sm text-white/70">
-                            <li><strong>GET</strong> /api/weather — Alle Wetterdaten abrufen</li>
-                            <li><strong>GET</strong> /api/weather/{id} — Wettereintrag per ID anzeigen</li>
-                            <li><strong>POST</strong> /api/weather — Neuen Wettereintrag anlegen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>PUT</strong> /api/weather/{id} — Wetterdaten aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /api/weather/{id} — Wetterdaten löschen <em>(API-Key erforderlich)</em></li>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/weather</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Alle Wetterdaten abrufen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/weather/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Wettereintrag per ID anzeigen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/weather</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neuen Wettereintrag anlegen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/weather/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Wetterdaten aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/weather/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Wetterdaten löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
                         </ul>
+                        <div class="mt-4">
+                            <a href="{{ url('/api/weather') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-[#F53003]/40 bg-[#F53003]/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:border-[#F53003] hover:bg-[#F53003]/20">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GET testen
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="rounded-2xl border border-white/10 bg-[#101014]/80 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur lg:col-span-3">
+                    <div class="rounded-2xl border border-white/10 bg-[#0f1013]/70 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+                        <h2 class="flex items-center gap-2 text-lg font-semibold text-white">
+                            <span class="text-[#F53003]"><i class="fa-solid fa-film"></i></span>
+                            Filme
+                        </h2>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/movies</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Liste aller Filme abrufen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/movies/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Details eines Films anzeigen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/movies</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neuen Film anlegen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/movies/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Film aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/movies/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Film löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="{{ url('/api/movies') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-[#F53003]/40 bg-[#F53003]/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:border-[#F53003] hover:bg-[#F53003]/20">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GET testen
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl border border-white/10 bg-[#0f1013]/70 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+                        <h2 class="flex items-center gap-2 text-lg font-semibold text-white">
+                            <span class="text-[#F53003]"><i class="fa-solid fa-gamepad"></i></span>
+                            Spiele
+                        </h2>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/games</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Liste aller Spiele abrufen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/games/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Details eines Spiels anzeigen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/games</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neues Spiel anlegen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/games/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Spiel aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/games/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Spiel löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="{{ url('/api/games') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-[#F53003]/40 bg-[#F53003]/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:border-[#F53003] hover:bg-[#F53003]/20">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GET testen
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl border border-white/10 bg-[#0f1013]/70 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+                        <h2 class="flex items-center gap-2 text-lg font-semibold text-white">
+                            <span class="text-[#F53003]"><i class="fa-solid fa-trophy"></i></span>
+                            Sportteams
+                        </h2>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/sport-teams</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Liste aller Sportteams abrufen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/sport-teams/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Details eines Sportteams anzeigen</span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/sport-teams</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neues Sportteam anlegen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/sport-teams/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Sportteam aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/sport-teams/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Sportteam löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="{{ url('/api/sport-teams') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-[#F53003]/40 bg-[#F53003]/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:border-[#F53003] hover:bg-[#F53003]/20">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GET testen
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl border border-white/10 bg-[#101014]/80 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur md:col-span-2 lg:col-span-3">
                         <h2 class="flex items-center gap-2 text-lg font-semibold text-white">
                             <span class="text-[#F53003]"><i class="fa-solid fa-database"></i></span>
                             Custom Data
                         </h2>
                         <p class="mt-3 text-sm text-white/70">
-                            Universeller Datenspeicher für beliebige Zwecke (z. B. Coins, Spielstände, Einstellungen, etc.).
+                            Universeller Datenspeicher für beliebige Zwecke (z. B. Coins, Spielstände, Einstellungen, etc.).<br>
                             <strong class="text-white/80">Hinweis:</strong> Alle Daten sind mandantengetrennt (API-Key bestimmt den Client) und werden nur für den jeweiligen Client angezeigt.
                         </p>
-                        <ul class="mt-4 space-y-2 text-sm text-white/70">
-                            <li><strong>GET</strong> /api/data — Alle eigenen Einträge abrufen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>GET</strong> /api/data/{id} — Einzelnen Eintrag per ID anzeigen <em>(API-Key erforderlich)</em></li>
-                            <li><strong>GET</strong> /api/data/category/{category} — Alle Einträge nach Kategorie filtern <em>(API-Key erforderlich)</em></li>
-                            <li><strong>POST</strong> /api/data — Neuen Eintrag speichern <em>(API-Key + Kategorie erforderlich)</em></li>
-                            <li><strong>PUT</strong> /api/data/{id} — Eintrag aktualisieren <em>(API-Key erforderlich)</em></li>
-                            <li><strong>DELETE</strong> /api/data/{id} — Eintrag löschen <em>(API-Key erforderlich)</em></li>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/data</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Alle eigenen Einträge abrufen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/data/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Einzelnen Eintrag per ID anzeigen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">GET</strong> /api/data/category/{category}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Alle Einträge nach Kategorie filtern <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">POST</strong> /api/data</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Neuen Eintrag speichern <em class="block text-xs text-white/40">(API-Key + Kategorie erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">PUT</strong> /api/data/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Eintrag aktualisieren <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
+                            <li><span class="font-mono text-white/80"><strong class="text-[#F53003]/80">DELETE</strong> /api/data/{id}</span>
+                                <span class="mt-0.5 block text-sm leading-snug text-white/60">Eintrag löschen <em class="block text-xs text-white/40">(API-Key erforderlich)</em></span>
+                            </li>
                         </ul>
                         <p class="mt-4 text-xs text-white/60">
                             Der POST-Body muss ein JSON-Objekt enthalten mit mindestens einem <code>category</code>-Feld sowie einem <code>data</code>-Objekt:

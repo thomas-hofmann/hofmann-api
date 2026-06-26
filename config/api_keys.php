@@ -1,12 +1,11 @@
 <?php
 
-$path = storage_path('api_keys.json');
-$apiKeysJson = file_get_contents($path);
-$apiKeysData = json_decode($apiKeysJson, true);
-
 return [
-    $apiKeysData['booksAPI']['path'] => $apiKeysData['booksAPI']['key'] ?? null,
-    $apiKeysData['carsAPI']['path'] => $apiKeysData['carsAPI']['key'] ?? null,
-    $apiKeysData['weatherAPI']['path'] => $apiKeysData['weatherAPI']['key'] ?? null,
-    $apiKeysData['dataAPI']['path'] => $apiKeysData['dataAPI']['keys'] ?? [], // mehrere keys als array
+    'books' => env('API_KEY_BOOKS'),
+    'cars' => env('API_KEY_CARS'),
+    'weather' => env('API_KEY_WEATHER'),
+    'movies' => env('API_KEY_MOVIES'),
+    'games' => env('API_KEY_GAMES'),
+    'sport-teams' => env('API_KEY_SPORT_TEAMS'),
+    'data' => env('API_KEY_CUSTOM_DATA'),
 ];
