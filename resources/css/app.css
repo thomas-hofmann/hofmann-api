@@ -13,6 +13,15 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Keep content visible until AOS has initialized, including without JavaScript. */
+[data-aos][data-aos]:not(.aos-init) {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+    pointer-events: auto;
+}
+
 @layer base {
     code {
         @apply rounded bg-white/5 px-1.5 py-0.5 text-[0.85em] text-white/80;
