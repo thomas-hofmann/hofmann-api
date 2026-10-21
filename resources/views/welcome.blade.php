@@ -35,6 +35,15 @@
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
+    <noscript>
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 
 <body class="min-h-screen bg-[#08090b] text-white/90 font-sans antialiased">
